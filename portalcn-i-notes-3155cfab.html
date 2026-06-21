@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 资料整理与信息索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #f6f3ef;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, sans-serif;
+      line-height: 1.7;
+      color: #2c2b28;
+      padding: 2rem 1.2rem;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fcfaf7;
+      padding: 2.8rem 2.2rem;
+      border-radius: 24px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.02);
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #3f3c38;
+      margin-bottom: 0.25rem;
+      border-left: 6px solid #b7a99c;
+      padding-left: 1.1rem;
+    }
+    .subtitle {
+      color: #7b746a;
+      font-size: 1rem;
+      margin: 0 0 2rem 0;
+      padding-left: 1.7rem;
+      border-bottom: 1px solid #e2ddd6;
+      padding-bottom: 0.75rem;
+    }
+    .hero-summary {
+      background: #f0ece6;
+      padding: 1.8rem 2rem;
+      border-radius: 20px;
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+    }
+    .hero-summary p {
+      margin-bottom: 0.8rem;
+    }
+    .hero-summary p:last-child {
+      margin-bottom: 0;
+    }
+    .hero-summary strong {
+      font-weight: 500;
+      color: #4e473e;
+    }
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin: 2.2rem 0 0.8rem 0;
+      color: #4f4a42;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 2px;
+      background: #c7b8ab;
+      flex-shrink: 0;
+    }
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      margin: 1.2rem 0 1.8rem 0;
+    }
+    .feature-card {
+      flex: 1 1 220px;
+      background: #f7f4ef;
+      padding: 1.4rem 1.2rem;
+      border-radius: 18px;
+      border: 1px solid #e9e2da;
+      transition: box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+    }
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #4f4a42;
+      margin-bottom: 0.5rem;
+    }
+    .feature-card p {
+      font-size: 0.92rem;
+      color: #5f5950;
+    }
+    .usage-tip {
+      background: #fff7ed;
+      border-left: 6px solid #d4c5b6;
+      padding: 1.4rem 1.6rem;
+      border-radius: 0 16px 16px 0;
+      margin: 1.6rem 0 1.8rem 0;
+    }
+    .usage-tip p {
+      font-size: 0.96rem;
+      color: #4f4940;
+    }
+    .insight-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin: 1.8rem 0;
+    }
+    .insight-item {
+      background: #fcf8f3;
+      padding: 1rem 1.5rem;
+      border-radius: 30px 12px 12px 30px;
+      border-left: 5px solid #b8a99b;
+    }
+    .insight-item p {
+      font-size: 0.96rem;
+    }
+    .faq-mini {
+      margin: 2.2rem 0 1.8rem 0;
+      border-top: 1px solid #e8e1d9;
+      padding-top: 1.8rem;
+    }
+    .faq-q {
+      font-weight: 500;
+      margin: 0.8rem 0 0.2rem 0;
+      color: #4f4a42;
+    }
+    .faq-a {
+      font-size: 0.94rem;
+      color: #5f5950;
+      padding-left: 1.2rem;
+      margin-bottom: 0.8rem;
+      border-left: 2px solid #dbd1c7;
+    }
+    .note-box {
+      background: #f4efe9;
+      border-radius: 18px;
+      padding: 1.2rem 1.6rem;
+      font-size: 0.93rem;
+      color: #5b554b;
+      margin: 1.8rem 0 1.2rem 0;
+    }
+    .link-sentence {
+      background: #faf7f2;
+      padding: 1.4rem 1.6rem;
+      border-radius: 18px;
+      border: 1px solid #e5ddd4;
+      margin: 1rem 0 0.2rem 0;
+      color: #3f3c38;
+    }
+    .link-sentence a {
+      color: #6b5f53;
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #ccc0b2;
+      transition: color 0.15s;
+    }
+    .link-sentence a:hover {
+      color: #3a332b;
+      text-decoration-color: #7f6f5f;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #e6dfd6;
+      margin: 2.2rem 0 0.5rem 0;
+    }
+    .footer-note {
+      font-size: 0.82rem;
+      color: #8f867b;
+      text-align: center;
+      margin-top: 1.4rem;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.6rem 1.2rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+        padding-left: 0.8rem;
+      }
+      .hero-summary {
+        padding: 1.2rem 1.2rem;
+      }
+      .feature-grid {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>爱游戏 · 资料整理与信息索引</h1>
+    <div class="subtitle">从分类角度看游戏的资源脉络</div>
+
+    <div class="hero-summary">
+      <p><strong>爱游戏</strong> 是一个以游戏资料整理与信息索引为方向的站点。它不追逐即时热点，也不渲染情绪，而是尝试将散落在不同渠道中的游戏相关内容，以相对清晰的结构重新组织起来。对于希望快速了解某款游戏背景、机制或内容脉络的玩家，这里可以成为一个安静的起点。</p>
+      <p>站点更像一面书架——每一条记录都经过筛选与归位，方便你按图索骥。无论你是刚接触某款作品，还是想回顾某一类型的演变，都能在这里找到可信的整理视角。</p>
+    </div>
+
+    <div class="section-title">整理亮点</div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>按类型归类</h3>
+        <p>角色扮演、策略、模拟、独立……每个类别下都附有简要说明与代表性作品索引，降低信息过载带来的选择疲劳。</p>
+      </div>
+      <div class="feature-card">
+        <h3>版本与平台标注</h3>
+        <p>同一款游戏在不同主机或 PC 上的差异，会在资料中明确列出。避免你因版本混淆而错过合适的体验。</p>
+      </div>
+      <div class="feature-card">
+        <h3>轻量参考卡片</h3>
+        <p>每款游戏以卡片形式呈现核心要素：发行年份、开发者、类型、大致时长。去繁就简，一眼定位关键信息。</p>
+      </div>
+    </div>
+
+    <div class="usage-tip">
+      <p><strong>使用建议：</strong> 如果你是第一次访问，不妨从“类型概览”栏目入手；若你已对某一作品有所耳闻，可以直接搜索名称，查看它的详细索引条目。资料会不定期补充，但保持克制——不堆砌无关内容，只为真正有用的整理留出位置。</p>
+    </div>
+
+    <div class="section-title">常见适用场景</div>
+    <div class="insight-block">
+      <div class="insight-item">
+        <p>🎮 计划入手一款新游戏，想先了解它的核心机制与口碑脉络，避免冲动消费。</p>
+      </div>
+      <div class="insight-item">
+        <p>📚 回顾经典作品，查看同类型游戏的发展脉络，或对比同一系列不同世代的差异。</p>
+      </div>
+      <div class="insight-item">
+        <p>🔍 写评测、做内容整理时，需要一个中立的资料索引作为参考基础。</p>
+      </div>
+    </div>
+
+    <div class="faq-mini">
+      <p class="faq-q">FAQ 摘要 · 站点内容是如何筛选的？</p>
+      <div class="faq-a">
+        以公开可查的信息为基础，不以个人偏好或主观评价为主导。每一则资料都尽量标注来源或参考依据，方便你进一步核实。
+      </div>
+      <p class="faq-q">资料更新的频率如何？</p>
+      <div class="faq-a">
+        没有固定周期。当某款游戏有重要的版本更新、或发现原有条目有误时，会进行补充修正。站点的节奏偏向稳定，而非频繁刷新。
+      </div>
+      <p class="faq-q">是否收录所有游戏？</p>
+      <div class="faq-a">
+        不追求“全网最全”。更重视条目的质量与实用性，所以会有选择地收录那些具有参考价值或话题代表性的作品。如果你发现某个条目有偏差，欢迎通过站内反馈渠道指出。
+      </div>
+    </div>
+
+    <div class="note-box">
+      ⚑ 本页面对 <a href="https://portalcn-i-game.com.cn" style="color: #6b5f53; text-decoration: underline; text-underline-offset: 3px;">爱游戏</a> 的描述基于站点实际内容风格撰写，不包含任何形式的付费推广或诱导行为。所有信息均以原始站内资料为准。
+    </div>
+
+    <div class="link-sentence">
+      若你想进一步浏览这些整理好的资料，可以直接前往 <a href="https://portalcn-i-game.com.cn">爱游戏</a>，从类型索引或搜索框开始你的探索。页面结构简单，没有多余的跳转与干扰，更适合静下心来慢慢翻阅。
+    </div>
+
+    <hr>
+    <div class="footer-note">
+      资料整理 · 信息索引 · 以温和的方式连接游戏与玩家
+    </div>
+  </div>
+</body>
+</html>
