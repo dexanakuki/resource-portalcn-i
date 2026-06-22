@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K1体育 · 简明指南与访问提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f7f4ef;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            color: #2b2926;
+            line-height: 1.7;
+            padding: 0 1.2rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.8rem 0 3rem;
+        }
+
+        /* 顶部导航 */
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #d6d1c9;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+            color: #3f3b35;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            font-size: 0.95rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #5b554b;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #a0673c;
+        }
+
+        /* hero 区 */
+        .hero {
+            margin: 2.8rem 0 2.2rem;
+            padding: 0 0.4rem;
+        }
+        .hero h1 {
+            font-size: 2.1rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            color: #1f1d1a;
+            margin-bottom: 0.8rem;
+        }
+        .hero p {
+            font-size: 1.05rem;
+            color: #4d4841;
+            max-width: 75%;
+        }
+        @media (max-width: 600px) {
+            .hero p {
+                max-width: 100%;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* 核心介绍 */
+        .intro-card {
+            background: #ffffffef;
+            padding: 1.8rem 2rem;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            margin-bottom: 2.2rem;
+            border-left: 5px solid #b5927a;
+        }
+        .intro-card p {
+            margin-bottom: 0.7rem;
+        }
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+        .intro-card strong {
+            color: #7e5c42;
+        }
+
+        /* 三个场景模块（卡片网格） */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2.2rem 0 2.5rem;
+        }
+        .scene-item {
+            background: #ffffff;
+            padding: 1.6rem 1.4rem 1.8rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            border: 1px solid #e3ded6;
+            transition: box-shadow 0.2s;
+        }
+        .scene-item:hover {
+            box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+        }
+        .scene-item h3 {
+            font-size: 1.15rem;
+            font-weight: 550;
+            color: #2f2b25;
+            border-bottom: 1px dashed #d3ccc2;
+            padding-bottom: 0.4rem;
+            margin-bottom: 0.75rem;
+        }
+        .scene-item p {
+            font-size: 0.95rem;
+            color: #49443c;
+        }
+        .scene-item .tag {
+            display: inline-block;
+            background: #efe9e1;
+            color: #5f4f3d;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.8rem;
+            border-radius: 30px;
+            margin-top: 0.6rem;
+            font-weight: 500;
+        }
+
+        /* 引用块 / 提示框 */
+        .notice-box {
+            background: #f0ebe2;
+            border-left: 6px solid #c7a884;
+            padding: 1.5rem 1.8rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0 1.5rem;
+            font-size: 0.95rem;
+            color: #3e3a33;
+        }
+        .notice-box h4 {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #5e4a35;
+            font-size: 1rem;
+        }
+        .notice-box p {
+            margin-bottom: 0.3rem;
+        }
+
+        /* 常见说明（简约FAQ风格） */
+        .faq-block {
+            margin: 2rem 0 1rem;
+        }
+        .faq-block details {
+            border-bottom: 1px solid #d9d3ca;
+            padding: 0.8rem 0;
+        }
+        .faq-block details:first-of-type {
+            border-top: 1px solid #d9d3ca;
+        }
+        .faq-block summary {
+            font-weight: 530;
+            color: #3c3730;
+            cursor: pointer;
+            padding: 0.2rem 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .faq-block summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-block summary::before {
+            content: "▸";
+            color: #a68063;
+            font-size: 1.1rem;
+            transition: transform 0.15s;
+        }
+        .faq-block details[open] summary::before {
+            transform: rotate(90deg);
+        }
+        .faq-block .answer {
+            padding: 0.5rem 0 0.5rem 1.8rem;
+            color: #4b453d;
+            font-size: 0.92rem;
+        }
+
+        /* 内联链接样式 */
+        a {
+            color: #7d5d42;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #cbb6a3;
+        }
+        a:hover {
+            color: #a0673c;
+            text-decoration-color: #a0673c;
+        }
+
+        /* 底部 */
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #dad4cb;
+            font-size: 0.85rem;
+            color: #736b5f;
+            text-align: left;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 500px) {
+            .nav-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+            .intro-card {
+                padding: 1.3rem 1.2rem;
+            }
+            .scene-item {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 顶部导航 -->
+    <nav class="nav-bar">
+        <span class="nav-brand">K1·指南</span>
+        <div class="nav-links">
+            <a href="#intro">介绍</a>
+            <a href="#scenes">场景</a>
+            <a href="#faq">说明</a>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>简明指南 &amp; 访问提醒</h1>
+        <p>聚焦 <a href="https://webs-k1sports.com">K1体育</a> 的平台特征与使用建议，帮助新老用户快速了解服务边界。</p>
+    </div>
+
+    <!-- 核心介绍 -->
+    <div class="intro-card" id="intro">
+        <p><strong>K1体育</strong> 整合了体育资讯、赛事数据与互动社区，面向对运动内容有持续需求的用户。平台不提供任何形式的投注或博彩功能，所有信息仅用于参考与交流。</p>
+        <p>作为信息聚合型站点，<a href="https://webs-k1sports.com">K1体育</a> 在内容筛选上保持中立，赛事数据来自公开渠道。用户在使用过程中应注意甄别信息的时效性，并依据自身需求合理规划访问习惯。</p>
+        <p>以下从三个典型使用场景出发，帮助您更高效地获取所需内容。</p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div id="scenes"><h2 style="font-weight: 530; font-size: 1.3rem; margin-bottom: 0.2rem; color: #2b2722;">常见使用场景</h2></div>
+    <div class="scenes-grid">
+        <div class="scene-item">
+            <h3>赛事动态追踪</h3>
+            <p>关注你喜欢的联赛或队伍，利用平台提供的实时比分、赛程与统计。建议将常用赛事加入收藏，减少重复检索时间。</p>
+            <span class="tag">信息密度高</span>
+        </div>
+        <div class="scene-item">
+            <h3>深度内容阅读</h3>
+            <p>浏览战术分析、球员访谈与行业观察。部分长文附有数据图表，适合在安静时段仔细阅读。可配合笔记工具记录要点。</p>
+            <span class="tag">适合专注场景</span>
+        </div>
+        <div class="scene-item">
+            <h3>社区话题参与</h3>
+            <p>在讨论区与其他爱好者交换观点，留意版规与发言礼仪。理性讨论通常能获得更有价值的回馈，避免情绪化表达。</p>
+            <span class="tag">互动提醒</span>
+        </div>
+    </div>
+
+    <!-- 提示框 / 引用块 -->
+    <div class="notice-box">
+        <h4>访问提醒</h4>
+        <p>• 建议使用最新版浏览器访问，部分交互组件在老旧浏览器上可能出现显示异常。</p>
+        <p>• 若遇到页面加载缓慢，可尝试清理缓存或切换网络环境。平台没有独立的移动应用，移动端体验依赖于自适应页面。</p>
+        <p>• 注意保护个人隐私，不要在公共设备上保存登录状态。官方不会通过站外链接索要你的密码或验证码。</p>
+    </div>
+
+    <!-- 常见说明 (FAQ摘要) -->
+    <div class="faq-block" id="faq">
+        <h2 style="font-weight: 530; font-size: 1.2rem; margin-bottom: 0.6rem; color: #2b2722;">常见说明</h2>
+
+        <details>
+            <summary>是否需要注册才能浏览？</summary>
+            <div class="answer">大部分内容支持游客浏览，但参与评论或收藏功能需注册账户。注册过程仅需邮箱与用户名，请使用真实可用的邮箱。</div>
+        </details>
+        <details>
+            <summary>内容更新频率如何？</summary>
+            <div class="answer">赛事数据通常实时或准实时更新；专题文章每周发布 3-5 篇，社区内容取决于用户生成频率。首页会显示最近更新的条目。</div>
+        </details>
+        <details>
+            <summary>遇到链接失效或显示错误怎么办？</summary>
+            <div class="answer">可尝试刷新页面或稍后再试。若持续出现异常，建议通过网站底部提供的反馈渠道描述问题，运维团队会在工作日内处理。</div>
+        </details>
+        <details>
+            <summary>平台是否提供付费会员？</summary>
+            <div class="answer">目前所有功能均为免费开放，未来若有调整会通过站内公告提前说明。不存在隐藏付费或自动订阅机制。</div>
+        </details>
+    </div>
+
+    <!-- 再次嵌入链接（自然） -->
+    <p style="margin: 1.8rem 0 0.4rem; font-size: 0.95rem; color: #4a443b;">
+        对平台功能有进一步疑问，可直接查阅 <a href="https://webs-k1sports.com">K1体育</a> 的帮助页面，或参考社区内其他用户的讨论帖。
+    </p>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+        <span>本页仅为信息介绍 · 内容仅供参考 · 独立编写</span>
+    </div>
+
+</div>
+</body>
+</html>
