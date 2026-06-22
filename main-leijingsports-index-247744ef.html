@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷竞技 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f2f4f7;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1d232b;
+            line-height: 1.6;
+            padding: 2rem 1.2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #1f2937;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.3rem;
+            border-left: 5px solid #2b6c94;
+            padding-left: 1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 1.6rem;
+            margin-bottom: 0.9rem;
+            border-bottom: 1px solid #d6dee8;
+            padding-bottom: 0.25rem;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            margin: 1rem 0 0.4rem;
+            color: #2b4b63;
+        }
+
+        p {
+            margin-bottom: 0.9rem;
+        }
+
+        .hero-card {
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.04);
+            padding: 2.2rem 2rem;
+            border: 1px solid #e0e6ef;
+            margin-bottom: 2rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.6rem 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e3e9f2;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.04);
+        }
+
+        .highlight-label {
+            display: inline-block;
+            background: #eef3f9;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #2b6c94;
+            border: 1px solid #d4dde9;
+            margin-bottom: 0.8rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 0.4rem 0 0.4rem 1.4rem;
+            position: relative;
+            border-bottom: 1px dashed #e5ecf5;
+        }
+
+        ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #3b7a9e;
+            font-weight: bold;
+            font-size: 1.3rem;
+            line-height: 1.2;
+        }
+
+        .faq-item {
+            margin: 1.2rem 0;
+            padding: 0.8rem 1rem;
+            background: #f9fafc;
+            border-radius: 12px;
+            border-left: 4px solid #9bb7d4;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #1f3b4f;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-a {
+            color: #3e5062;
+            font-size: 0.95rem;
+        }
+
+        .site-link {
+            background: #ffffff;
+            border: 1px solid #d1dceb;
+            border-radius: 40px;
+            padding: 0.5rem 1.2rem 0.5rem 1.4rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: #1d4b6e;
+            font-weight: 450;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: background 0.15s, border-color 0.15s;
+            margin: 0.8rem 0 0.2rem;
+        }
+
+        .site-link:hover {
+            background: #eaf1fa;
+            border-color: #a3bed9;
+            text-decoration: none;
+        }
+
+        .inline-link {
+            color: #1d5b82;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b6cddf;
+        }
+
+        .inline-link:hover {
+            color: #0a3b55;
+            text-decoration-color: #1d5b82;
+        }
+
+        .note-box {
+            background: #f1f5fa;
+            border-radius: 14px;
+            padding: 1.2rem 1.5rem;
+            border: 1px solid #d5e0ed;
+            margin: 1.8rem 0 0.8rem;
+            font-size: 0.92rem;
+            color: #2c3e50;
+        }
+
+        .footer-note {
+            text-align: center;
+            border-top: 1px solid #dae0ea;
+            margin-top: 2.5rem;
+            padding-top: 1.8rem;
+            font-size: 0.85rem;
+            color: #5b6e80;
+        }
+
+        @media (min-width: 640px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .hero-card {
+                padding: 2.8rem 2.8rem;
+            }
+            h1 {
+                font-size: 2.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .hero-card {
+                padding: 1.6rem 1.2rem;
+            }
+            .card {
+                padding: 1.2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-card">
+        <h1>雷竞技 · 产品说明</h1>
+        <p style="font-size: 1.05rem; color: #385468; max-width: 680px;">
+            一次对站点本身功能与立场的简要梳理。我们尝试用平实的语言，说清楚 <a href="https://main-leijingsports.com" class="inline-link">雷竞技</a> 是什么、适合谁、以及使用前值得了解的事。
+        </p>
+        <div style="margin-top: 1.2rem;">
+            <span class="highlight-label">版本摘要 2025</span>
+            <span class="highlight-label" style="margin-left: 0.5rem;">聚焦体验</span>
+        </div>
+    </div>
+
+    <!-- 摘要 card -->
+    <div class="card">
+        <h2>站点摘要</h2>
+        <p><a href="https://main-leijingsports.com" class="inline-link">雷竞技</a> 是一个围绕竞技内容与数字互动设计的平台。它的定位更接近于“信息+轻交互”的聚合入口，而非单一工具。从页面结构看，它整合了赛事参考、社区动态、数据浏览等模块，整体逻辑偏向于浏览与发现。</p>
+        <p>我们注意到，平台在信息组织上更强调分类与快捷跳转，适合那些希望快速获取竞技领域动态、又不愿被过度推送打扰的用户。</p>
+    </div>
+
+    <!-- 亮点 + 特点 两列布局 -->
+    <div class="card-grid">
+        <div class="card">
+            <h2>亮点</h2>
+            <ul>
+                <li>首页信息密度适中，没有冗余弹窗与强引导</li>
+                <li>分类卡片清晰，支持按兴趣区域直接浏览</li>
+                <li>视觉风格偏中性，阅读负担较低</li>
+                <li>页面响应速度稳定，结构轻量</li>
+                <li>对移动端适配友好，常用功能手指可及</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>功能特点</h2>
+            <ul>
+                <li>模块化内容区域，各板块独立刷新</li>
+                <li>内置简易筛选，可切换信息维度</li>
+                <li>无强制注册即可浏览大部分内容</li>
+                <li>页面更新频率稳定，信息时效性较好</li>
+                <li>链接结构清晰，便于回溯与收藏</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 使用建议 + 场景 -->
+    <div class="card">
+        <h2>使用建议 · 场景</h2>
+        <p>如果你是对竞技资讯有日常需求、但不想被算法过度牵引的浏览者，<a href="https://main-leijingsports.com" class="inline-link">雷竞技</a> 的阅读节奏会比较舒服。可以把它当作一个安静的资讯起点，适合在通勤间隙、工作暂停时随手翻看。</p>
+        <p>我们也建议首次访问的朋友花一两分钟熟悉一下顶部导航和分类标签——它们并不是装饰，而是理解这个站点信息骨架的关键。对于习惯深度浏览的用户，可以利用浏览器标签页同时打开多个相关条目，对比阅读体验更好。</p>
+        <div style="background: #f7faff; padding: 0.8rem 1rem; border-radius: 12px; margin-top: 0.8rem; border: 1px solid #dde6f0;">
+            <span style="font-weight: 450; color: #1f4a66;">一个常见的用法：</span> 早上先看首页摘要，标记感兴趣的内容，午休时再细读。不用登录，不用关注，来去自由。
+        </div>
+    </div>
+
+    <!-- 可信但克制的说明 -->
+    <div class="card" style="margin-top: 0.5rem;">
+        <h2>可信与边界说明</h2>
+        <p>我们在这里描述的是 <a href="https://main-leijingsports.com" class="inline-link">雷竞技</a> 作为公开可访问站点的基本面貌。需要说明的是：任何网站的信息都可能随时间调整，我们建议用户根据自身判断使用内容。</p>
+        <p>平台本身未嵌入极端诱导性元素（如自动播放、强制弹窗、虚假紧迫感提示），这在当前环境中算是比较克制的设计。但请注意，这不代表站点内容完全中立或适用于所有目的——保持基本的数字媒介素养总是有益的。</p>
+        <div class="note-box">
+            <strong>提示：</strong> 如果你对某个具体功能或数据来源有疑问，可以通过站点内提供的联系渠道进一步核实。本页面仅作静态介绍，不构成任何形式的背书或保证。
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card" style="margin-top: 0.5rem;">
+        <h2>FAQ 摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">Q：访问 <a href="https://main-leijingsports.com" class="inline-link">雷竞技</a> 需要注册吗？</div>
+            <div class="faq-a">A：浏览基本内容无需注册。部分互动或收藏类功能可能涉及账户，但注册流程清晰且可跳过。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：移动端体验如何？</div>
+            <div class="faq-a">A：页面采用了响应式设计，在手机和平板上卡片会自动重排，阅读和点击都比较顺手。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：信息更新频率大概怎样？</div>
+            <div class="faq-a">A：根据观察，主要板块基本保持每日或隔日更新，但具体节奏视内容源而定。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：有没有邮件订阅或推送？</div>
+            <div class="faq-a">A：目前未发现强制推送机制，站点本身以被动访问为主，比较安静。</div>
+        </div>
+    </div>
+
+    <!-- 链接按钮 自然嵌入 -->
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem; margin: 1.8rem 0 0.5rem;">
+        <span style="color: #2d4a64;">如果你还未浏览过：</span>
+        <a href="https://main-leijingsports.com" class="site-link">雷竞技</a>
+        <span style="color: #5d7287; font-size: 0.9rem;">—— 一个值得花几分钟安静探索的站点</span>
+    </div>
+
+    <div class="footer-note">
+        <p>本页面为产品说明式静态介绍，内容基于公开观察与合理描述，不构成投资、医疗或法律建议。</p>
+        <p style="margin-top: 0.2rem;">© 2025 · 索引页 · 仅作示意</p>
+    </div>
+
+</body>
+</html>
